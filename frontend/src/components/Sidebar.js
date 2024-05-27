@@ -8,7 +8,12 @@ const Sidebar = () => {
     <div className="sidebar">
       <h1 className="site-name">Muse</h1>
       <nav>
-        <NavLink exact to="/" activeClassName="active">Home</NavLink>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? 'active' : '')}
+      >
+        Home
+      </NavLink>
         {/*<NavLink to="/list" activeClassName="active">My List</NavLink>*/}
       </nav>
       {/*
