@@ -5,6 +5,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const searchYouTube = async (query) => {
   try {
+    console.log(BASE_URL);
     const response = await axios.get(`${BASE_URL}/search`, { params: { q: query } });
     return response.data || [];
   } catch (error) {
