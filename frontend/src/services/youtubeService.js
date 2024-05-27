@@ -16,7 +16,6 @@ export const searchYouTube = async (query) => {
 export const getAudioUrl = async (videoId) => {
   try {
     const response = await axios.get(`${BASE_URL}/audioUrl`, { params: { videoId: videoId } });
-    console.log(response.data.audioUrl);
     return response.data.audioUrl || null;
   } catch (error) {
     console.error('Error fetching audio URL', error);
