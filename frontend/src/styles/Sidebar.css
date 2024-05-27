@@ -1,0 +1,71 @@
+/* src/components/Sidebar.css */
+.sidebar {
+    width: 13%;
+    background-color: #181818;
+    color: #1DB954;
+    padding: 20px;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.sidebar .site-name {
+  font-size: 32px; /* Increase the font size */
+  font-weight: 900; /* Bold font weight */
+  margin-bottom: 20px;
+  color: #1DB954;
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* Use custom font */
+}
+  
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .sidebar nav a {
+    color: #b3b3b3;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 10px;
+    transition: color 0.3s;
+    font-weight: 400; /* Regular font weight */
+  }
+  
+  .sidebar nav a:hover {
+    color: #ffffff;
+  }
+  
+  .sidebar nav a.active {
+    background-color: #1DB954; /* Example active link background color */
+    color: #ffffff; /* Example active link text color */
+    /* Add any other styles for active link */
+  }
+
+  .sidebar button {
+    margin-top: 20px;
+    background: none;
+    border: 1px solid #1DB954;
+    color: #1DB954;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500; /* Medium font weight */
+  }
+  
+  .sidebar button:hover {
+    background-color: #1DB954;
+    color: #121212;
+  }
+
+  /* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Adjust width to fill the entire screen on smaller devices */
+    position: static; /* Remove fixed positioning on smaller screens */
+    height: auto; /* Remove fixed height to allow content to push down */
+  }
+}

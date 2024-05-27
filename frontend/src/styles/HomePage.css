@@ -1,0 +1,30 @@
+/* src/pages/HomePage.css */
+.homepage-container {
+  display: flex;
+}
+
+.main-content {
+  margin-bottom: 6%;
+  margin-left: 16%;
+  padding: 20px;
+  flex-grow: 1;
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+.main-content h2 {
+  font-weight: 500; /* Medium font weight */
+}
+
+.main-content p {
+  font-weight: 300; /* Light font weight */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-bottom: 20%;
+    margin-left: 0; /* Remove margin on smaller screens */
+  }
+}

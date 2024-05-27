@@ -1,0 +1,29 @@
+/* src/styles/SearchResults.css */
+.results {
+    margin-top: 20px;
+  }
+  
+  .result-item {
+    display: flex;
+    align-items: center;
+    background-color: #282828;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .result-item:hover {
+    background-color: #3e3e3e;
+  }
+  
+  .result-image {
+    margin-right: 10px;
+  }
+  
+  .result-title {
+    color: #ffffff;
+    font-size: 16px;
+  }
+  

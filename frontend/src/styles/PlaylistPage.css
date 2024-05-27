@@ -1,0 +1,63 @@
+/* PlaylistPage.css */
+
+.playlist-page {
+    padding: 20px;
+    margin-left: 290px;
+  }
+  
+  .playlist {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #282828;
+    border-radius: 5px;
+    padding: 5px 20px;
+    transition: background-color 0.3s;
+  }
+
+  .playlist:hover{
+    background-color: #3e3e3e;
+  }
+  
+  .playlist input,
+  .playlist-name {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    color: #1DB954;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: medium;
+    transition: color 0.3s;
+    width: fit-content;
+  }
+  
+  .playlist input {
+    width: 150px;
+  }
+  
+  .playlist-name:hover {
+    color: #ffffff;
+  }
+  
+  .playlist-name:focus {
+    outline: none;
+  }
+  
+  /* New styles for the Create Playlist button */
+.create-playlist-button {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #1DB954;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .create-playlist-button:hover {
+    background-color: #1ed760;
+  }

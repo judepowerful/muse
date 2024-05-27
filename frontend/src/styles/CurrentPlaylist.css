@@ -1,0 +1,75 @@
+.current-playlist {
+    position: fixed;
+    padding: 0px;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 90%;
+    background-color: #181818;
+    color: #1DB954; /* Text color */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+  
+  .empty-playlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+  }
+  
+  .current-playlist-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .current-playlist-items li {
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .current-playlist-items li img.thumbnail {
+    width: 100px; /* Set width of the thumbnail image */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    margin-right: 10px; /* Add margin to the right for spacing */
+    margin-left: 10px;
+  }
+  
+  .current-playlist-items li span {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 2.4em;
+    line-height: 1.2em;
+    font-size: 14px;
+  }
+  
+  
+  .current-playlist-items li:hover {
+    background-color: rgba(29, 185, 84, 0.2); /* Hover color */
+  }
+  
+  .current-playlist-items li.current-song {
+    background-color: rgba(29, 185, 84, 0.4); /* Current song color */
+  }
+  
+  .remove-song {
+    background-color: transparent;
+    border: none;
+    color: #ff0000; /* Red color for remove button */
+    cursor: pointer;
+    outline: none;
+    margin-right: 10px; /* Add margin to the remove button for spacing */
+  }
+  

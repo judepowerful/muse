@@ -1,0 +1,253 @@
+.music-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    background-color: #181818;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.music-info-container{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.album-image-container {
+    width: 70px;
+    height: 50px;
+    padding-left: 40px;
+    margin-right: 20px;
+}
+
+.album-image {
+    width: 100%;
+    height: 100%;
+}
+
+.info-container {
+    overflow: hidden;
+    width: 50%;
+}
+
+.music-title {
+    white-space: nowrap; /* Prevent wrapping */
+    width: 100%; /* Ensure it takes up the available width */
+    margin: 0; /* Remove any default margin */
+}
+
+
+.music-title.overflow {
+    animation: marquee 10s linear infinite;
+  }
+  
+  @keyframes marquee {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+  }
+  
+
+
+.controls-container {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playback-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+}
+
+.playback-controls-icons {
+    display: flex;
+    align-items: center;
+}
+
+.playback-controls-icons svg {
+    font-size: x-large;
+    margin: 10px 20px;
+    cursor: pointer;
+}
+
+.play-pause-icon, .mute-icon, .playlist-icon {
+    width: 40px; /* Set a fixed width for play/pause and mute buttons */
+    text-align: center;
+    cursor: pointer;
+}
+
+.time-slider-container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.time-slider {
+    flex-grow: 1;
+}
+
+.addition-controls-container {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.volume-slider {
+    margin-left: 10px;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.music-player button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.music-player button:hover {
+    text-decoration: underline;
+}
+
+.music-player input[type="range"] {
+    cursor: pointer;
+}
+
+.time-slider-container,
+.volume-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.current-time,
+.duration-time {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.current-time,
+.duration-time,
+.mute-icon,
+.playlist-icon {
+  font-size: 16px; /* Increase the font size */
+  color: #a7a7a7; /* Use the specified color for the numbers and mute icon */
+}
+
+.time-slider,
+.volume-slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  height: 8px; /* Track height */
+  background: #ccc; /* Grey background for the remaining part */
+  outline: none;
+  border-radius: 5px; /* Ensure the border radius works */
+  position: relative;
+}
+
+/* Webkit for Chrome, Safari, etc. */
+.time-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px; /* Width of the thumb */
+  height: 15px; /* Height of the thumb */
+  background: #fff; /* White color for the thumb */
+  cursor: pointer;
+  margin-top: -3.5px; /* Adjust to vertically center the thumb */
+  border-radius: 2px; /* Making it square */
+  position: relative;
+  z-index: 1;
+}
+
+.time-slider::-webkit-slider-runnable-track,
+.volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #1DB954 0%, #1DB954 var(--progress), #ccc var(--progress), #ccc 100%);
+  border-radius: 5px; /* Ensure the border radius works */
+}
+
+/* Moz for Firefox */
+.time-slider::-moz-range-thumb,
+.volume-slider::-moz-range-thumb {
+  width: 15px; /* Width of the thumb */
+  height: 15px; /* Height of the thumb */
+  background: #fff; /* White color for the thumb */
+  cursor: pointer;
+  border-radius: 2px; /* Making it square */
+  position: relative;
+  z-index: 1;
+}
+
+.time-slider::-moz-range-track,
+.volume-slider::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #1DB954 0%, #1DB954 var(--progress), #ccc var(--progress), #ccc 100%);
+  border-radius: 5px; /* Ensure the border radius works */
+}
+
+/* Adding support for IE and other browsers */
+.time-slider::-ms-thumb,
+.volume-slider::-ms-thumb {
+  width: 15px; /* Width of the thumb */
+  height: 15px; /* Height of the thumb */
+  background: #fff; /* White color for the thumb */
+  cursor: pointer;
+  border-radius: 2px; /* Making it square */
+  position: relative;
+  z-index: 1;
+}
+
+.time-slider::-ms-track,
+.volume-slider::-ms-track {
+  width: 100%;
+  height: 8px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.time-slider::-ms-fill-lower,
+.volume-slider::-ms-fill-lower {
+  background: #1DB954;
+  border-radius: 5px 0 0 5px; /* Ensure the border radius works */
+}
+
+.time-slider::-ms-fill-upper,
+.volume-slider::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 0 5px 5px 0; /* Ensure the border radius works */
+}
+
+.disabled {
+  color: grey;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .music-info-container{
+    display: none;
+  }
+  .volume-controls{
+    display: none;
+  }
+}
