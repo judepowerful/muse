@@ -3,6 +3,7 @@ require('dotenv').config();
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
 const ytdl = require('ytdl-core'); // Import ytdl
+const { exec } = require('child_process');
 //const ffmpeg = require('fluent-ffmpeg');
 //const ffmpegStatic = require('ffmpeg-static');
 //const stream = require('stream');
@@ -38,6 +39,7 @@ const searchYouTube = async (req, res) => {
     }
 };
 
+/*
 const getAudioUrl = async (req, res) => {
     try {
         const videoId = req.query.videoId;
@@ -60,7 +62,6 @@ const getAudioUrl = async (req, res) => {
         const audioUrl = mp4Format.url;
         res.json({ audioUrl });
 
-        /*
         ffmpeg.setFfmpegPath(ffmpegStatic);
         
         var audio = ytdl(`https://www.youtube.com/watch?v=${videoId}`, { filter: 'audioonly'});
@@ -72,10 +73,46 @@ const getAudioUrl = async (req, res) => {
         .pipe(res, {
           end: true
        });
-       */
     } catch (error) {
         console.error('Error fetching audio URL from YouTube:', error);
         return null;
+    }
+};
+*/
+
+const getAudioUrl = async (req, res) => {
+    try {
+        const videoId = req.query.videoId;
+        const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+        // List all available formats
+        exec(`yt-dlp --list-formats ${videoUrl}`, (error, stdout, stderr) => {
+            if (error) {
+                console.error('Error executing yt-dlp:', error);
+                return res.status(500).send('Internal Server Error');
+            }
+
+            console.log('Available Formats:');
+            console.log(stdout);
+
+            // Command to get the best audio format URL (m4a preferred, fallback to other audio formats)
+            exec(`yt-dlp -f ba[ext=m4a] --get-url ${videoUrl}`, (error, stdout, stderr) => {
+                if (error) {
+                    console.error('Error executing yt-dlp for audio:', error);
+                    return res.status(500).send('Internal Server Error');
+                }
+
+                const audioUrl = stdout.trim();
+                if (!audioUrl) {
+                    return res.status(404).send('No suitable audio format found');
+                }
+                console.log(audioUrl);
+                res.json({ audioUrl });
+            });
+        });
+    } catch (error) {
+        console.error('Error fetching audio URL from YouTube:', error);
+        res.status(500).send('Internal Server Error');
     }
 };
 
