@@ -20,4 +20,8 @@ chmod +x yt-dlp || { echo "Error: Failed to make yt-dlp executable"; exit 1; }
 echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >> "$HOME/.bashrc"
 source "$HOME/.bashrc" || source "$HOME/.bash_profile" || source "$HOME/.profile"
 
+# Test yt-dlp
+echo "Testing yt-dlp..."
+yt-dlp --version || { echo "Error: Failed to execute yt-dlp"; exit 1; }
+
 echo "yt-dlp installed successfully in $INSTALL_DIR"
