@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # Install yt-dlp
-brew install yt-dlp
+mkdir -p ~/bin
+cd ~/bin
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o yt-dlp
+chmod +x yt-dlp
